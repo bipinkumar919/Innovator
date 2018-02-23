@@ -5,6 +5,38 @@
     "project_id": "innovator-4853c",
     "storage_bucket": "innovator-4853c.appspot.com"
   },
-  "client": [],
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522733585467:android:c04b40aa181801d5",
+        "android_client_info": {
+          "package_name": "com.example.akshay.noblind"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522733585467-o7adgrgcuidf8ldmdlmb9knpjutnt8ov.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhK-5lQvpr2V4ssRJRPGT3JnaKoYcu0fo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
   "configuration_version": "1"
 }

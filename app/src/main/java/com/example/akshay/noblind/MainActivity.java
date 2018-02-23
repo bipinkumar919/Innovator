@@ -19,6 +19,7 @@ import com.github.nisrulz.sensey.ChopDetector;
 import com.github.nisrulz.sensey.Sensey;
 import com.github.nisrulz.sensey.ShakeDetector;
 import com.github.nisrulz.sensey.WristTwistDetector;
+import com.google.firebase.FirebaseApp;
 import com.google.gson.Gson;
 import com.microsoft.projectoxford.vision.VisionServiceClient;
 import com.microsoft.projectoxford.vision.VisionServiceRestClient;
@@ -54,10 +55,12 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
         setContentView(R.layout.activity_main);
         AnalyseImage = (ImageView) findViewById(R.id.AnalyseImage);
         Sensey.getInstance().init(this);
+        FirebaseApp.initializeApp(getApplicationContext());
 
 
 
-
+        Intent i = new Intent(this, MapsActivity.class);
+        startActivity(i);
 
         WristTwistDetector.WristTwistListener wristTwistListener=new WristTwistDetector.WristTwistListener() {
                 @Override public void onWristTwist() {
