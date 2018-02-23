@@ -29,12 +29,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Emotions" />
-        <activity android:name=".OcrCaptureActivity" />
-        <activity
+      <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".BarcodeDetectorActivity" />
+        <activity android:name=".Emotions" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".OcrCaptureActivity" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".MapsActivity" />
+    <activity android:name=".BarcodeDetectorActivity" />
         <activity android:name=".BarcodeCaptureActivity" />
         <activity android:name=".BrandAnalyze" />
         <!--

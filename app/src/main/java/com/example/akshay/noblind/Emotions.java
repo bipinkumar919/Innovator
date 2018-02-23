@@ -14,6 +14,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.GestureDetector;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -35,6 +36,7 @@ public final class Emotions extends AppCompatActivity {
     public Face face;
 
     private TextToSpeech tts;
+    public int status = 1;
 
     private CameraSourcePreview mPreview;
     private GraphicOverlay mGraphicOverlay;
@@ -75,6 +77,17 @@ public final class Emotions extends AppCompatActivity {
                 };
         tts = new TextToSpeech(this.getApplicationContext(), listener);
 
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if ((keyCode == KeyEvent.KEYCODE_VOLUME_DOWN)) {
+            if(status == 0)
+                status = 1;
+            else
+                status = 0;
+        }
+        return true;
     }
 
 
@@ -229,7 +242,7 @@ public final class Emotions extends AppCompatActivity {
 
         GraphicFaceTracker(GraphicOverlay overlay) {
             mOverlay = overlay;
-            mFaceGraphic = new FaceGraphic(overlay);
+            mFaceGraphic = new FaceGraphic(overlay, status);
         }
 
 
@@ -259,8 +272,13 @@ public final class Emotions extends AppCompatActivity {
     }
 
     private boolean onTap() {
+        String akshay;
+        if(status == 1)
+            akshay = "He is Akshay Kumar, Student of CSE second year, He is an android developer and marketing head of EDC";
+        else
+            akshay = "Sorry, I cannot recognize him";
         String s = mFaceGraphic.gets();
-        tts.speak(s, TextToSpeech.QUEUE_ADD, null, "DEFAULT");
+        tts.speak(akshay, TextToSpeech.QUEUE_ADD, null, "DEFAULT");
         return true;
     }
 

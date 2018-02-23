@@ -1,72 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E1BEE7"
+    android:background="#EFEBE9"
     android:orientation="vertical"
     tools:context="com.example.akshay.noblind.MainActivity">
 
+    <Button
+        android:id="@+id/face"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:background="@mipmap/facedectect"
+        android:elevation="16dp"
+        android:onClick="Face_Recognition"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/clickImage"
-        android:layout_width="367dp"
-        android:layout_height="246dp"
-        android:layout_marginLeft="8dp"
-        android:background="@color/pinki"
-        android:onClick="clickImageClicked"
-        android:scaleType="fitXY"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_weight="1"
-        android:layout_marginTop="27dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="16dp"/>
 
-    <ImageButton
-        android:id="@+id/AnalyseImage"
-        android:layout_width="367dp"
-        android:layout_height="242dp"
-        android:layout_marginLeft="8dp"
-        android:background="@color/white"
-        android:onClick="AnalyseImageClicked"
-        android:paddingTop="8dp"
-        android:layout_margin="16dp"
-        android:scaleType="fitXY"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clickImage"
-        app:layout_constraintVertical_weight="1"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="45dp" />
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignRight="@+id/face"
+        android:layout_marginEnd="44dp"
+        android:layout_marginTop="16dp"
+        android:background="@mipmap/tracker"
+        android:elevation="16dp"
+        android:onClick="Teacher_Locator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="276dp"
+        android:layout_marginStart="48dp"
+        android:background="@mipmap/bar"
+        android:elevation="16dp"
+        android:onClick="Barcode_Reader"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="276dp"
+        android:layout_marginEnd="44dp"
+        android:background="@mipmap/ocr"
+        android:onClick="OCR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="364dp"
+        android:layout_height="209dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button5"
+        app:layout_constraintVertical_bias="0.264">
+
+        <TextView
+            android:id="@+id/conversation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp" />
+    </ScrollView>
+
+    <EditText
+        android:id="@+id/user_input"
+        android:layout_width="374dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:background="#FFF"
+        android:hint="How can I help you?"
+        android:imeOptions="actionDone"
+        android:inputType="textShortMessage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="0.741" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="UPLOAD"
-        android:textSize="50dp"
-        android:textStyle="bold"
+        android:layout_width="100dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="104dp"
+        android:background="#FFF"
+        android:elevation="32dp"
+        android:text="     Recognizer"
         android:textColor="#000"
-        tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="97dp"
-        android:layout_alignTop="@+id/clickImage"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_marginTop="84dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ANALYSE"
+        android:layout_width="99dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="104dp"
+        android:text="        Locator"
+        android:background="#FFF"
         android:textColor="#000"
-        android:textStyle="bold"
-        android:textSize="50dp"
-        tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="358dp"
-        android:layout_alignTop="@+id/AnalyseImage"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="81dp" />
-</RelativeLayout>
+        android:elevation="32dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="242dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="100dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="48dp"
+        android:background="#FFF"
+        android:textColor="#000"
+        android:elevation="32dp"
+        android:text="     Book Issue"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="228dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="      Read Text"
+        android:background="#FFF"
+        android:textColor="#000"
+        android:elevation="32dp"
+        tools:layout_editor_absoluteX="240dp"
+        tools:layout_editor_absoluteY="228dp" />
+
+
+</android.support.constraint.ConstraintLayout>
+

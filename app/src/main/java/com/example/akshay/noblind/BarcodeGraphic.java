@@ -4,6 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.speech.tts.TextToSpeech;
 
 import com.google.android.gms.vision.barcode.Barcode;
 
@@ -23,6 +24,7 @@ public class BarcodeGraphic extends GraphicOverlayb.Graphic {
 
     private static int mCurrentColorIndex = 0;
 
+    private TextToSpeech tts;
     private Paint mRectPaint;
     private Paint mTextPaint;
     private volatile Barcode mBarcode;

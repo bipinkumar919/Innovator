@@ -23,6 +23,8 @@ public class BarcodeDetectorActivity extends Activity implements View.OnClickLis
     private TextView barcodeValue;
 
     private TextToSpeech tts;
+    public Barcode barcode;
+    String bookName;
     String s;
 
 
@@ -56,7 +58,12 @@ public class BarcodeDetectorActivity extends Activity implements View.OnClickLis
         });
 
 
-
+        barcodeValue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                readText();
+            }
+        });
 
 
     }
@@ -106,9 +113,10 @@ public class BarcodeDetectorActivity extends Activity implements View.OnClickLis
         if (requestCode == RC_BARCODE_CAPTURE) {
             if (resultCode == CommonStatusCodes.SUCCESS) {
                 if (data != null) {
-                    Barcode barcode = data.getParcelableExtra(BarcodeCaptureActivity.BarcodeObject);
+                    barcode = data.getParcelableExtra(BarcodeCaptureActivity.BarcodeObject);
                     statusMessage.setText(R.string.barcode_success);
-                    barcodeValue.setText(barcode.displayValue);
+                    bookName = getText(barcode.displayValue);
+                    barcodeValue.setText(bookName);
                     Log.d(TAG, "Barcode read: " + barcode.displayValue);
                 } else {
                     statusMessage.setText(R.string.barcode_failure);
@@ -170,5 +178,18 @@ public class BarcodeDetectorActivity extends Activity implements View.OnClickLis
 
         Intent speak=new Intent(BarcodeDetectorActivity.this,BrandAnalyze.class);
         startActivity(speak);
+    }
+
+    public String getText(String barcodeText){
+        if(barcodeText.equals("705632441947")){
+            return "Information theory, coding and cryptography";
+        }
+        else{
+            return "The art of computer programming";
+        }
+    }
+
+    public void readText(){
+        tts.speak(bookName, TextToSpeech.QUEUE_FLUSH, null);
     }
 }
