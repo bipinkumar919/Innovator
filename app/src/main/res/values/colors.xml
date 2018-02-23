@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#AB47BC</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimaryDark">#BCAAA4</color>
+    <color name="colorAccent">#E0F7FA</color>
     <color name="white">#a7ffeb</color>
-    <color name="pinki">#ff80ab</color>
+    <color name="pinki">#E0F7FA</color>
 
 </resources>
