@@ -18,7 +18,9 @@
     <string name="barcode_failure">No barcode captured</string>
     <string name="barcode_error">"Error reading barcode: %1$s"</string>
     <string name="adidas">This is adidas </string>
+    <string name="title_activity_maps">Map</string>
     <string name="username">b9e1a342-c279-42f0-86a3-7f10aea4dcb0</string>
     <string name="password">2c0Xc4em7AOm</string>
     <string name="workspace">6e2748cd-0a84-43be-9c31-f4ff41822c35</string>
+
 </resources>

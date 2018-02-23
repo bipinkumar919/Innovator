@@ -22,6 +22,7 @@ import com.github.nisrulz.sensey.ChopDetector;
 import com.github.nisrulz.sensey.Sensey;
 import com.github.nisrulz.sensey.ShakeDetector;
 import com.github.nisrulz.sensey.WristTwistDetector;
+import com.google.firebase.FirebaseApp;
 import com.google.gson.Gson;
 import com.ibm.watson.developer_cloud.conversation.v1.ConversationService;
 import com.ibm.watson.developer_cloud.conversation.v1.model.MessageRequest;
@@ -60,10 +61,12 @@ public class MainActivity extends AppCompatActivity implements TextToSpeech.OnIn
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Sensey.getInstance().init(this);
+        FirebaseApp.initializeApp(getApplicationContext());
 
 
 
-
+        Intent i = new Intent(this, MapsActivity.class);
+        startActivity(i);
 
         final ConversationService myConversationService =
                 new ConversationService(
